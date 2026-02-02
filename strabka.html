@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>💖</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .popup {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 300px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .popup p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #e63e5c;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="popup">
+    <p id="text">Ahoj 😊</p>
+    <button onclick="nextText()">Další</button>
+</div>
+
+<script>
+    const texts = [
+        "Ahoj 😊",
+        "Chtěl jsem ti něco říct…",
+        "Už nějakou dobu na tebe myslím 💭",
+        "A tak mě napadla jedna otázka…"
+    ];
+
+    let index = 0;
+
+    function nextText() {
+        index++;
+        if (index < texts.length) {
+            document.getElementById("text").innerText = texts[index];
+        } else {
+            document.getElementById("text").innerText = "💖";
+        }
+    }
+</script>
+
+</body>
+</html>
